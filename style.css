@@ -1,7 +1,15 @@
 body {
     display: flex; 
     justify-content: center;
+    align-items: center;
     flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    text-align: center;
+    font-size: large;
+    width: 960px;
 }
 .main-container {
     display: flex;
