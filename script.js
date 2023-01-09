@@ -1,9 +1,11 @@
-let widthTotal = window.innerWidth*.45;
+let widthTotal = 960;
 let heightTotal = widthTotal;
 let mainContainer = document.querySelector('.main-container');
+let userInput = document.querySelector('input');
 
 
 function createGrids(gridNum) {
+    mainContainer.innerHTML ='';
     createRowContainers(gridNum);
     let rowsContainers = document.querySelectorAll('.row');
     let widthPerGrid = widthTotal/gridNum; 
@@ -18,7 +20,6 @@ function createGrids(gridNum) {
     rowsContainers.forEach((row) => {
         for(let i = 0; i < gridNum; i++) {
             row.appendChild(gridDiv.cloneNode(true));
-            console.log(i);
         }
     })
     let gridDivCollection = document.querySelectorAll('.grid');
@@ -61,6 +62,6 @@ function createRowContainers(gridNum) {
     for(let i = 0; i < gridNum; i++) {
         mainContainer.appendChild(rowDiv.cloneNode(true))
     }
-}
+};
 
-createGrids(45)
+userInput.addEventListener('input', () => createGrids(parseInt(userInput.value)))
